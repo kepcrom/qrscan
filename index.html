@@ -1,11 +1,19 @@
 <html>
 <head>
 <title>QRSCAN</title>
+<script type="text/javascript">
+let captbtn = null;
+function setup()
+{
+  captbtn = document.getElementById( 'captbtn' );
+  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia({video:true}) } );
+}
+</script>
 </head>
-<body>
+<body onload="setup()">
 <h3>Page for QR scanning</h3>
 <form>
-  <input type="file" accept="image/*" capture="user" />
+  <button id="capbtn">Capture Image</button>
 </form>
 </body>
 </html>
