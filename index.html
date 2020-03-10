@@ -14,7 +14,7 @@ function setup()
       video.id = 'showvid';
   var captbtn = document.createElement('BUTTON');
   captbtn.innerHTML = "Grab Some Video";
-  var constraints = window.constraints = { audio: false, video: true, camera: 'environment' };
+  var constraints = window.constraints = { audio: false, video: { facingMode: { exact: "environment" } } };
   captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia(constraints).then(showvideo) } );
   document.body.appendChild(captbtn);
   document.body.appendChild(video);
