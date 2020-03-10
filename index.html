@@ -8,7 +8,8 @@ function setup()
 {
   var captbtn = document.createElement('BUTTON');
   captbtn.innerHTML = "Grab Some Video";
-  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia({video:true}) } );
+  var constraints = window.constraints = { audio: false, video: true };
+  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia(constraints).then(alert('stuff')).catch(alert('nuff')) } );
   document.body.appendChild(captbtn);
 }
 </script>
