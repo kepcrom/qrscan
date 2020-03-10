@@ -6,9 +6,10 @@
 var captbtn = null;
 function setup()
 {
-  alert('testing');
-  captbtn = document.getElementById( 'captbtn' );
+  var captbtn = document.createElement('BUTTON');
+  captbtn.innerHTML = "Grab Some Video";
   captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia({video:true}) } );
+  document.body.appendChild(captbtn);
 }
 </script>
 <style media="screen">
@@ -17,6 +18,5 @@ function setup()
 </head>
 <body onload="setup()">
 <h3>Page for QR scanning</h3>
-<button id="capbtn">Capture Image</button>
 </body>
 </html>
