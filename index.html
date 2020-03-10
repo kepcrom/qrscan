@@ -7,6 +7,9 @@ var captbtn = null;
 function setup()
 {
   var video = document.createElement('VIDEO');
+      video.style['width'] = '500px';
+      video.style['height'] = '500px';
+      video.style['border'] = '2px solid red';
       video.id = 'showvid';
   var captbtn = document.createElement('BUTTON');
   captbtn.innerHTML = "Grab Some Video";
