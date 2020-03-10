@@ -6,8 +6,9 @@
 var captbtn = null;
 function setup()
 {
+  alert('testing');
   captbtn = document.getElementById( 'captbtn' );
-  captbtn.addEventListener( 'click', function(){ alert('testing'); navigator.mediaDevices.getUserMedia({video:true}) } );
+  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia({video:true}) } );
 }
 </script>
 <style media="screen">
