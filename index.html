@@ -1,14 +1,18 @@
 <html>
 <head>
 <title>QRSCAN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript">
-let captbtn = null;
+var captbtn = null;
 function setup()
 {
   captbtn = document.getElementById( 'captbtn' );
   captbtn.addEventListener( 'click', function(){ alert('testing'); navigator.mediaDevices.getUserMedia({video:true}) } );
 }
 </script>
+<style media="screen">
+
+</style>
 </head>
 <body onload="setup()">
 <h3>Page for QR scanning</h3>
