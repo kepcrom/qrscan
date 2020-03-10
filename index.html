@@ -16,6 +16,7 @@ function setup()
   var constraints = window.constraints = { audio: false, video: true };
   captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia(constraints).then(showvideo).else(alert('cant')) } );
   document.body.appendChild(captbtn);
+  document.body.appendChild(video);
 }
 function showvideo(stream)
 {
