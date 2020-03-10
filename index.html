@@ -7,6 +7,7 @@ var captbtn = null;
 function setup()
 {
   var video = document.createElement('VIDEO');
+      video.style['display'] = 'block';
       video.style['width'] = '500px';
       video.style['height'] = '500px';
       video.style['border'] = '2px solid red';
@@ -14,7 +15,7 @@ function setup()
   var captbtn = document.createElement('BUTTON');
   captbtn.innerHTML = "Grab Some Video";
   var constraints = window.constraints = { audio: false, video: true };
-  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia(constraints).then(showvideo).else(alert('cant')) } );
+  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia(constraints).then(showvideo) } );
   document.body.appendChild(captbtn);
   document.body.appendChild(video);
 }
