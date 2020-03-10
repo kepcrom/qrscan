@@ -6,11 +6,19 @@
 var captbtn = null;
 function setup()
 {
+  var video = document.createElement('VIDEO');
+      video.id = 'showvid';
   var captbtn = document.createElement('BUTTON');
   captbtn.innerHTML = "Grab Some Video";
   var constraints = window.constraints = { audio: false, video: true };
-  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia(constraints).then(alert('stuff')).catch(alert('nuff')) } );
+  captbtn.addEventListener( 'click', function(){ navigator.mediaDevices.getUserMedia(constraints).then(showvideo).else(alert('cant')) } );
   document.body.appendChild(captbtn);
+}
+function showvideo(stream)
+{
+  var video = document.getElementById('showvid')
+      video.autoplay = true;
+      video.srcObject = stream;
 }
 </script>
 <style media="screen">
