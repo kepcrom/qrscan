@@ -7,6 +7,7 @@ var captbtn = null;
 function setup()
 {
   var video = document.createElement('VIDEO');
+      video.autoplay = true;
       video.style['display'] = 'block';
       video.style['width'] = '500px';
       video.style['height'] = '500px';
@@ -24,6 +25,9 @@ function showvideo(stream)
   var video = document.getElementById('showvid')
       video.autoplay = true;
       video.srcObject = stream;
+      video.onloadedmetadata = function(e) {
+        video.play();
+      };      
 }
 </script>
 <style media="screen">
