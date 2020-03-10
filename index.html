@@ -23,11 +23,12 @@ function setup()
 function showvideo(stream)
 {
   var video = document.getElementById('showvid')
-      video.autoplay = true;
+      video.setAttribute("autoplay", true);
+      video.setAttribute("playsinline", true);
       video.srcObject = stream;
       video.onloadedmetadata = function(e) {
         video.play();
-      };      
+      };
 }
 </script>
 <style media="screen">
